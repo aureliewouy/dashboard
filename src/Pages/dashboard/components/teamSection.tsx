@@ -38,19 +38,19 @@ const TeamSection: React.FC = () => {
           online={true}
             name="John Doe"
             role="CEO"
-            imageUrl="https://i.imgur.com/1yQ2HmV.jpg"
+            imageUrl="https://xsgames.co/randomusers/avatar.php?g=male&n=M"
           />
           <TeamMember
              online={true}
             name="Jane Smith"
             role="Marketing Director"
-            imageUrl="https://i.imgur.com/LGvuwzT.jpg"
+            imageUrl="https://xsgames.co/randomusers/avatar.php?g=female"
           />
           <TeamMember
              online={false}
             name="Bob Johnson"
             role="Software Engineer"
-            imageUrl="https://i.imgur.com/ocHoYXJ.jpg"
+            imageUrl="https://xsgames.co/randomusers/avatar.php?g=male"
           />
         </div>
       </div>

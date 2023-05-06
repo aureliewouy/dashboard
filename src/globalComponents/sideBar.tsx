@@ -14,8 +14,8 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ active }) => {
   return (
     <div className={styles.sidebar}>
-      <div style={{width:"100px", margin:"auto", paddingBottom:"20px"}}>
-      <img src={logo} alt="Logo" style={{width:"100px", margin:"auto"}}/>
+      <div style={{width:"100%", marginRight:"auto", paddingLeft:"20px", paddingBottom:"20px", display:"flex"}}>
+      <img src={logo} alt="Logo" style={{width:"50px"}}/><p style={{fontWeight:"bold", marginLeft:"10px"}}>Wouy</p>
       </div>
       <div className={styles.sidebarItem}>
         <Link to="/" className={active === 'dashboard' ? styles.active :''}>
