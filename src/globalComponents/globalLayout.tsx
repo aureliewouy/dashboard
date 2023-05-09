@@ -3,18 +3,16 @@ import Sidebar from "./sideBar";
 import NavBar from "./menu";
 
 interface LayoutProps {
-    children: React.ReactNode;
-  }
+  children: React.ReactNode;
+}
 
-const GlobalLayout = ({ children }: LayoutProps)  => {
+const GlobalLayout = ({ children }: LayoutProps) => {
   return (
     <div>
       {/* <GlobalProvider>*/}
-        <NavBar/>
-        <Sidebar active="dashboard"/>
-        <main style={{width:"84%", marginLeft:"auto"}}>
-        { children }
-        </main>
+      <NavBar />
+      <Sidebar active="dashboard" />
+      <main style={{ width: "84%", marginLeft: "auto" }}>{children}</main>
     </div>
   );
 };

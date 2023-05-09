@@ -1,25 +1,68 @@
-import { format } from 'date-fns';
-import { fr } from 'date-fns/esm/locale'
+import styled from "styled-components";
+import { ReactComponent as Download } from "../../../medias/icons/download.svg";
+import { ReactComponent as Add } from "../../../medias/icons/add_circle.svg";
+
+const Welcome = styled.p`
+  margin-top: -15px;
+  color: darkgrey;
+`;
+const HeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  margin-bottom: 30px;
+`;
+const Buttons = styled.div`
+  padding: 0 10px;
+  border: 1px solid rgba(221, 213, 213, 0.9);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  & > svg {
+    width: 25px;
+    height: 25px;
+  }
+  & > p {
+    font-weight: 500;
+    margin: 10px;
+  }
+`;
+const DownloadBtn = styled(Buttons)`
+  background-color: white;
+  margin-right: 10px;
+`;
+const AddBtn = styled(Buttons)`
+  color: white;
+  background-color: teal;
+  & > svg {
+    fill: white;
+  }
+`;
+const DoubleBtn = styled.div`
+  display: flex;
+`;
 
 const DashboardHeader = (): JSX.Element => {
-  const today = new Date();
-  const formattedDate = format(today, "EEEE d MMMM yyyy", { locale: fr });  
-  const month= format(today,"MMM", { locale: fr })
   return (
-<div style={{margin:"60px"}}>
-   <div style={{display:"flex", alignItems:"center", justifyContent:"space-between", padding:"20px"}}>
     <div>
-    <h1>Hi John Doe</h1> 
-
-    <p>{formattedDate}</p>
+      <HeaderWrapper>
+        <div>
+          <h1>Hi John Doe</h1>
+          <Welcome>Welcome back to CRM platform</Welcome>
+        </div>
+        <DoubleBtn>
+          <DownloadBtn>
+            <Download />
+            <p>Download</p>
+          </DownloadBtn>
+          <AddBtn>
+            <Add />
+            <p>Add dashlet</p>
+          </AddBtn>
+        </DoubleBtn>
+      </HeaderWrapper>
     </div>
-    <div>
-      <button>Download</button>
-    </div>
-   </div>
-
-</div>
-
   );
 };
 

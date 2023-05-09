@@ -1,27 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 interface CardProps {
   price: string;
   subtitle: string;
   icon: JSX.Element;
   percent: number;
+  color: string;
 }
 
 const CardWrapper = styled.div`
-  width: 250px;
+  flex-grow: 1;
   height: 150px;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
-const CardLoadingWrapper = styled.div `
-margin-top:35px;
-    width:100%;
-    height:5px;
-    background-color:grey;
-    border-radius:25px;
+const CardLoadingWrapper = styled.div`
+  margin-top: 35px;
+  width: 100%;
+  height: 5px;
+  background-color: grey;
+  border-radius: 25px;
 `;
 
 const CardContent = styled.div`
@@ -41,38 +42,43 @@ const CardFlex = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const Icon = styled.div`
-& > svg {
-  fill:blue;
-    width:30px;
-  }
 
+const CardPercent = styled.div`
+  width: 0;
+  height: 5px;
+  background-color: blue;
+  border-radius: 25px;
 `;
-
-
-const CardPercent = styled.div `
-  width:0;
-  height:5px;
-  background-color:blue;
-  border-radius:25px;
-  `;
-const Card: React.FC<CardProps> = ({ price, subtitle, icon, percent }) => {
+const Card: React.FC<CardProps> = ({
+  price,
+  subtitle,
+  icon,
+  percent,
+  color,
+}) => {
   const CardPercentProps = styled(CardPercent)`
-  width: ${props => percent+"%" || "0"};`;
+    width: ${(props) => percent + "%" || "0"};
+    background-color: ${(props) => color};
+  `;
+  const Icon = styled.div`
+    & > svg {
+      fill: ${(props) => color};
+      width: 30px;
+    }
+  `;
+
   return (
     <CardWrapper>
       <CardContent>
         <CardFlex>
           <div>
-          <CardTitle>{price}</CardTitle>
-          <CardSubtitle>{subtitle}</CardSubtitle>
+            <CardTitle>{price}</CardTitle>
+            <CardSubtitle>{subtitle}</CardSubtitle>
           </div>
-          <Icon>
-            {icon}
-          </Icon>
+          <Icon>{icon}</Icon>
         </CardFlex>
         <CardLoadingWrapper>
-            <CardPercentProps></CardPercentProps>
+          <CardPercentProps></CardPercentProps>
         </CardLoadingWrapper>
       </CardContent>
     </CardWrapper>

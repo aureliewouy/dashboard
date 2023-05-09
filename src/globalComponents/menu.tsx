@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 
 const NavWrapper = styled.div`
@@ -6,7 +6,7 @@ const NavWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  width:84%;
+  width: 84%;
   margin-left: auto;
   top: 0;
   right: 0;
@@ -64,7 +64,10 @@ const NavBar = () => {
         <NotificationIcon>
           <i className="fa fa-bell" />
         </NotificationIcon>
-        <ProfileImage src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Profile" />
+        <ProfileImage
+          src="https://xsgames.co/randomusers/avatar.php?g=male"
+          alt="Profile"
+        />
         <ProfileName>John Doe</ProfileName>
       </ProfileWrapper>
     </NavWrapper>

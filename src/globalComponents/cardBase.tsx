@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 interface CardProps {
   title: string;
-  chart: JSX.Element;
+  widget: JSX.Element;
 }
 
 const CardWrapper = styled.div`
-  width: 32%;
+  flex-grow: 1;
   height: 450px;
   background-color: white;
   border-radius: 10px;
@@ -29,19 +29,19 @@ const CardFlex = styled.div`
   justify-content: space-between;
 `;
 
-const CardChart: React.FC<CardProps> = ({ title, chart }) => {
+const CardBase: React.FC<CardProps> = ({ title, widget }) => {
   return (
     <CardWrapper>
       <CardContent>
         <CardFlex>
           <div>
-          <CardTitle>{title}</CardTitle>
+            <CardTitle>{title}</CardTitle>
           </div>
         </CardFlex>
-        {chart}
+        {widget}
       </CardContent>
     </CardWrapper>
   );
 };
 
-export default CardChart;
+export default CardBase;

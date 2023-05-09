@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './teamSection.module.css';
+import React from "react";
+import styles from "./teamSection.module.css";
 
 interface TeamMemberProps {
   name: string;
@@ -8,7 +8,12 @@ interface TeamMemberProps {
   online: boolean;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageUrl , online}) => {
+const TeamMember: React.FC<TeamMemberProps> = ({
+  name,
+  role,
+  imageUrl,
+  online,
+}) => {
   return (
     <div className={styles.teamMember}>
       <div className={styles.avatar}>
@@ -18,9 +23,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageUrl , online})
         <h4>{name}</h4>
         <p>{role}</p>
       </div>
-      <div className={styles.online} style={{backgroundColor: online? "green" : "red"}}>
-
-      </div>
+      <div
+        className={styles.online}
+        style={{ backgroundColor: online ? "green" : "red" }}
+      ></div>
     </div>
   );
 };
@@ -35,19 +41,19 @@ const TeamSection: React.FC = () => {
         </div>
         <div className={styles.teamMembers}>
           <TeamMember
-          online={true}
+            online={true}
             name="John Doe"
             role="CEO"
             imageUrl="https://xsgames.co/randomusers/avatar.php?g=male&n=M"
           />
           <TeamMember
-             online={true}
+            online={true}
             name="Jane Smith"
             role="Marketing Director"
             imageUrl="https://xsgames.co/randomusers/avatar.php?g=female"
           />
           <TeamMember
-             online={false}
+            online={false}
             name="Bob Johnson"
             role="Software Engineer"
             imageUrl="https://xsgames.co/randomusers/avatar.php?g=male"
