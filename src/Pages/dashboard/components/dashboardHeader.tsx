@@ -14,6 +14,7 @@ const HeaderWrapper = styled.div`
   margin-bottom: 30px;
 `;
 const Buttons = styled.div`
+  cursor: pointer;
   padding: 0 10px;
   border: 1px solid rgba(221, 213, 213, 0.9);
   border-radius: 9px;

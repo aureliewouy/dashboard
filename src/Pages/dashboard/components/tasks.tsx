@@ -9,22 +9,22 @@ interface Task {
 const TaskList = () => {
   const [tasks, setTasks] = useState<Task[]>([
     {
-      id: Date.now(),
+      id: Math.random(),
       description: "Send email to Robert",
       done: false,
     },
     {
-      id: Date.now(),
+      id: Math.random(),
       description: "User Testing",
       done: true,
     },
     {
-      id: Date.now(),
+      id: Math.random(),
       description: "Create new version",
       done: false,
     },
     {
-      id: Date.now(),
+      id: Math.random(),
       description: "Start the Campaign",
       done: false,
     },
@@ -60,18 +60,19 @@ const TaskList = () => {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
-  console.log(tasks);
+
   return (
     <div>
-      <p>
+      <p style={{ marginTop: "-5px", color: "darkgrey", marginLeft: "3px" }}>
         {tasks.filter((task) => task.done).length} of {tasks.length} done
       </p>
-      <ul>
+      <ul style={{ padding: 0 }}>
         {tasks.map((task) => (
-          <li key={task.id} style={{ listStyleType: "none" }}>
+          <li key={task.id} style={{ listStyleType: "none", lineHeight: 2.1 }}>
             <input
               type="checkbox"
               checked={task.done}
+              style={{ transform: "scale(1.3)", marginRight: "10px" }}
               onChange={() => handleTaskDoneChange(task.id)}
             />
             <span

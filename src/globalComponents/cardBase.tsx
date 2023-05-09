@@ -4,6 +4,7 @@ import styled from "styled-components";
 interface CardProps {
   title: string;
   widget: JSX.Element;
+  grow?: number;
 }
 
 const CardWrapper = styled.div`
@@ -29,9 +30,12 @@ const CardFlex = styled.div`
   justify-content: space-between;
 `;
 
-const CardBase: React.FC<CardProps> = ({ title, widget }) => {
+const CardBase: React.FC<CardProps> = ({ title, widget, grow }) => {
+  const CardWrapperSized = styled(CardWrapper)`
+    flex-grow: ${(props) => grow};
+  `;
   return (
-    <CardWrapper>
+    <CardWrapperSized>
       <CardContent>
         <CardFlex>
           <div>
@@ -40,7 +44,7 @@ const CardBase: React.FC<CardProps> = ({ title, widget }) => {
         </CardFlex>
         {widget}
       </CardContent>
-    </CardWrapper>
+    </CardWrapperSized>
   );
 };
 

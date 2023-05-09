@@ -10,6 +10,7 @@ import { ReactComponent as Mail } from "../../medias/icons/mail.svg";
 import { ReactComponent as Wallet } from "../../medias/icons/wallet.svg";
 import CardBase from "../../globalComponents/cardBase";
 import TaskList from "./components/tasks";
+import ProjectTable from "./components/projectsTable";
 
 const DashboardComponent = (): JSX.Element => {
   return (
@@ -85,6 +86,7 @@ const DashboardComponent = (): JSX.Element => {
             gap: " 10px",
           }}
         >
+          <CardBase grow={2} title="Top projects" widget={<ProjectTable />} />
           <CardBase title="Tasks" widget={<TaskList />} />
         </div>
       </div>
