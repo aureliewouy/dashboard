@@ -24,10 +24,9 @@ export const salesData: SalesDashboardProps = {
 
 export const salesByProductData: SalesByProductProps = {
   data: [
-    { product: "Produit 1", sales: 75000 },
-    { product: "Produit 2", sales: 60000 },
-    { product: "Produit 3", sales: 40000 },
-    { product: "Produit 4", sales: 30000 },
-    { product: "Produit 5", sales: 20000 },
+    { product: "Mobile Apps", sales: 408 },
+    { product: "Software", sales: 56 },
+    { product: "Consulting", sales: 212 },
+    { product: "Web design", sales: 333 },
   ],
 };

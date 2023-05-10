@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { ReactComponent as Remove } from "../../../medias/icons/remove.svg";
 interface Task {
   id: number;
   description: string;
@@ -80,7 +80,20 @@ const TaskList = () => {
             >
               {task.description}
             </span>
-            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+            <div
+              style={{ display: "inline", cursor: "pointer" }}
+              onClick={() => handleDeleteTask(task.id)}
+            >
+              <Remove
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  verticalAlign: "middle",
+                  float: "right",
+                  marginRight: "20px",
+                }}
+              />
+            </div>
           </li>
         ))}
       </ul>

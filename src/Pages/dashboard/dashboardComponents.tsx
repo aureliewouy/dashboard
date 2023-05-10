@@ -14,7 +14,7 @@ import ProjectTable from "./components/projectsTable";
 
 const DashboardComponent = (): JSX.Element => {
   return (
-    <div style={{ backgroundColor: "cornsilk" }}>
+    <div style={{ backgroundColor: "var(--background)" }}>
       <div style={{ padding: "2% 4%" }}>
         <DashboardHeader />
 
@@ -31,26 +31,26 @@ const DashboardComponent = (): JSX.Element => {
             subtitle="Won from 18 deals"
             icon={<Work />}
             percent={67}
-            color={"blue"}
+            color={"var(--blue)"}
           />
           <CardBusiness
             price={formatNumber(1096.3, "$")}
             subtitle="Won from 18 deals"
             icon={<Wallet />}
             percent={18}
-            color={"red"}
+            color={"var(--pink)"}
           />
           <CardBusiness
             price={formatNumber(33, "%")}
             subtitle="Lead conversation"
             icon={<Mail />}
-            color={"green"}
+            color={"var(--purple)"}
             percent={78}
           />
           <CardBusiness
             price={formatNumber(730)}
             subtitle="Campagain sent"
-            color={"yellow"}
+            color={"var(--yellow)"}
             icon={<Send />}
             percent={80}
           />
@@ -65,16 +65,14 @@ const DashboardComponent = (): JSX.Element => {
           }}
         >
           <CardBase
-            title="Total Email Sent"
+            title="Projects Categories"
+            grow={0.5}
             widget={<SalesByProduct data={salesByProductData.data} />}
           />
           <CardBase
             title="Income Amounts"
+            grow={2}
             widget={<SalesDashboard salesData={salesData.salesData} />}
-          />
-          <CardBase
-            title="Revenue"
-            widget={<SalesByProduct data={salesByProductData.data} />}
           />
         </div>
         <div
@@ -90,7 +88,6 @@ const DashboardComponent = (): JSX.Element => {
           <CardBase title="Tasks" widget={<TaskList />} />
         </div>
       </div>
-      x
     </div>
   );
 };

@@ -35,7 +35,7 @@ const DownloadBtn = styled(Buttons)`
 `;
 const AddBtn = styled(Buttons)`
   color: white;
-  background-color: teal;
+  background-color: var(--blue);
   & > svg {
     fill: white;
   }

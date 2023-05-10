@@ -12,10 +12,11 @@ code {
     monospace;
 }
 :root {
-  --darkBlue: #2d728f;
-  --lightBlue: #3b8ea5;
-  --lightYellow: #f5ee9e;
-  --orange: #f49e4c;
-  --red: rgba(171, 52, 40, 1);
-  --redOpacity: rgba(171, 52, 40, 0.5);
+  --yellow: #ffbe0b;
+  --orange: #fb5607;
+  --pink: #ff006e;
+  --purple: #8338ec;
+  --blue: #3a86ff;
+  --blueOpacity: rgba(58, 134, 255, 0.3);
+  --background: #f9f9f9;
 }

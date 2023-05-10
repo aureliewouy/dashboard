@@ -6,7 +6,7 @@ const NavWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  width: 84%;
+  width: 85%;
   margin-left: auto;
   top: 0;
   right: 0;
