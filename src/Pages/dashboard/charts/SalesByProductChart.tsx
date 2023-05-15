@@ -12,8 +12,6 @@ export interface SalesByProductProps {
 const SalesByProduct: React.FC<SalesByProductProps> = ({ data }) => {
   const options: Highcharts.Options = {
     chart: {
-      //   plotBackgroundColor: null,
-      //   plotBorderWidth: null,
       plotShadow: false,
       type: "pie",
     },
@@ -37,24 +35,19 @@ const SalesByProduct: React.FC<SalesByProductProps> = ({ data }) => {
       pie: {
         allowPointSelect: true,
         cursor: "pointer",
-        dataLabels: {
-          enabled: true,
-          // format: "<b>{point.name}</b>: {point.y:.2f}€",
-          style: {
-            color: "black",
-          },
-        },
       },
     },
     series: [
       {
         type: "pie",
         name: "Categorie",
-        colorByPoint: true,
         data: data.map((d) => ({ name: d.product, y: d.sales })),
         showInLegend: true,
         dataLabels: {
-          enabled: false,
+          color: "white",
+          distance: -50,
+          enabled: true,
+          format: "{point.percentage:.1f}%",
         },
       },
     ],

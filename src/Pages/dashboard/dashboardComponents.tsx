@@ -35,7 +35,7 @@ const DashboardComponent = (): JSX.Element => {
           />
           <CardBusiness
             price={formatNumber(1096.3, "$")}
-            subtitle="Won from 18 deals"
+            subtitle="Daily average income"
             icon={<Wallet />}
             percent={18}
             color={"var(--pink)"}

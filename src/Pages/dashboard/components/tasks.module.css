@@ -1,0 +1,52 @@
+input[type="checkbox"] {
+  background-color: green; /* Changer la couleur de fond */
+  border-radius: 5px; /* Ajouter des coins arrondis */
+  padding: 10px; /* Ajouter un peu d'espace entre le bord et le contenu */
+}
+.checkbox {
+  transform: scale(1.3);
+  margin-right: 10px;
+  accent-color: var(--purple) !important;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  float: right;
+  margin-right: 20px;
+}
+.done {
+  color: var(--purple);
+  font-weight: bold;
+}
+.counter {
+  margin-top: -5px;
+  color: darkgrey;
+  margin-left: 3px;
+}
+.btnAdd {
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: -1px;
+}
+.input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  flex-grow: 1;
+}
+.wrapperAdd {
+  display: flex;
+  position: relative;
+}
+.list {
+  list-style-type: none;
+  line-height: 2.5;
+}

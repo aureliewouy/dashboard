@@ -4,70 +4,113 @@ import { formatNumber } from "../../../utils/formatNumber";
 
 interface TableData {
   no: number;
-  project: string;
+  category: string;
+  name: string;
   revenues: number;
   leads: number;
   deals: number;
 }
 const StyledTable = styled.table`
+  margin-top: 25px;
   border-collapse: collapse;
   width: 100%;
 `;
 
 const StyledTableHeader = styled.th`
-  background-color: var(--blue);
-  color: white;
   font-weight: bold;
   text-align: left;
+  color: darkGrey;
   padding: 8px;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 `;
 
 const StyledTableCell = styled.td`
   text-align: left;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 20px 8px;
 `;
 
 const BodyTableRow = styled.tr`
-  &:nth-child(even) {
-    background: #ccc;
+  &:nth-child(odd) {
+    background: var(--background);
   }
 `;
 const tableData: TableData[] = [
-  { no: 1, project: "Website Redesign", revenues: 1000, leads: 20, deals: 5 },
-  { no: 2, project: "Marketing Plan", revenues: 2000, leads: 30, deals: 10 },
-  { no: 3, project: "Mobile App ", revenues: 3000, leads: 40, deals: 15 },
-  { no: 4, project: "E-commerce Site", revenues: 4000, leads: 50, deals: 20 },
-  { no: 5, project: "Brand Identity", revenues: 56400, leads: 30, deals: 10 },
+  {
+    no: 1,
+    name: "Lumina",
+    category: "Website Redesign",
+    revenues: 1000,
+    leads: 20,
+    deals: 5,
+  },
+  {
+    no: 2,
+    name: "BlueWave",
+    category: "Marketing Plan",
+    revenues: 2000,
+    leads: 30,
+    deals: 10,
+  },
+  {
+    no: 3,
+    name: "Synapse",
+    category: "Mobile App ",
+    revenues: 3000,
+    leads: 40,
+    deals: 15,
+  },
+  {
+    no: 4,
+    name: "SwiftShift",
+    category: "E-commerce",
+    revenues: 4000,
+    leads: 50,
+    deals: 20,
+  },
+  {
+    no: 5,
+    name: "NexusTech",
+    category: "Mobile App",
+    revenues: 56400,
+    leads: 30,
+    deals: 10,
+  },
 ];
 
 const ProjectTable: React.FC = () => {
   return (
-    <StyledTable>
-      <thead>
-        <tr>
-          <StyledTableHeader>No</StyledTableHeader>
-          <StyledTableHeader>Projects</StyledTableHeader>
-          <StyledTableHeader>Revenues</StyledTableHeader>
-          <StyledTableHeader>Leads</StyledTableHeader>
-          <StyledTableHeader>Deals</StyledTableHeader>
-        </tr>
-      </thead>
-      <tbody>
-        {tableData.map((data) => (
-          <BodyTableRow key={data.no}>
-            <StyledTableCell>{data.no}</StyledTableCell>
-            <StyledTableCell>{data.project}</StyledTableCell>
-            <StyledTableCell>
-              {formatNumber(data.revenues, "$")}
-            </StyledTableCell>
-            <StyledTableCell>{data.leads}</StyledTableCell>
-            <StyledTableCell>{data.deals}</StyledTableCell>
-          </BodyTableRow>
-        ))}
-      </tbody>
-    </StyledTable>
+    <div>
+      <p style={{ marginTop: "-5px", color: "darkgrey", marginLeft: "3px" }}>
+        Last 2 Weeks
+      </p>
+
+      <StyledTable>
+        <thead>
+          <tr style={{ borderBottom: "1px solid #ddd" }}>
+            <StyledTableHeader>No</StyledTableHeader>
+            <StyledTableHeader>Name</StyledTableHeader>
+            <StyledTableHeader>Category</StyledTableHeader>
+            <StyledTableHeader>Revenues</StyledTableHeader>
+            <StyledTableHeader>Leads</StyledTableHeader>
+            <StyledTableHeader>Deals</StyledTableHeader>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((data) => (
+            <BodyTableRow key={data.no}>
+              <StyledTableCell>{data.no}</StyledTableCell>
+              <StyledTableCell>{data.name}</StyledTableCell>
+              <StyledTableCell>{data.category}</StyledTableCell>
+              <StyledTableCell>
+                {formatNumber(data.revenues, "$")}
+              </StyledTableCell>
+              <StyledTableCell>{data.leads}</StyledTableCell>
+              <StyledTableCell>{data.deals}</StyledTableCell>
+            </BodyTableRow>
+          ))}
+        </tbody>
+      </StyledTable>
+    </div>
   );
 };
 

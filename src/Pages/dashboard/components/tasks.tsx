@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as Remove } from "../../../medias/icons/remove.svg";
+import styles from "./tasks.module.css";
 interface Task {
   id: number;
   description: string;
@@ -63,47 +64,41 @@ const TaskList = () => {
 
   return (
     <div>
-      <p style={{ marginTop: "-5px", color: "darkgrey", marginLeft: "3px" }}>
+      <p className={styles.counter}>
         {tasks.filter((task) => task.done).length} of {tasks.length} done
       </p>
       <ul style={{ padding: 0 }}>
         {tasks.map((task) => (
-          <li key={task.id} style={{ listStyleType: "none", lineHeight: 2.1 }}>
+          <li className={styles.list} key={task.id}>
             <input
+              className={styles.checkbox}
               type="checkbox"
               checked={task.done}
-              style={{ transform: "scale(1.3)", marginRight: "10px" }}
               onChange={() => handleTaskDoneChange(task.id)}
             />
-            <span
-              style={{ textDecoration: task.done ? "line-through" : "none" }}
-            >
+            <span className={task.done ? styles.done : ""}>
               {task.description}
             </span>
             <div
               style={{ display: "inline", cursor: "pointer" }}
               onClick={() => handleDeleteTask(task.id)}
             >
-              <Remove
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  verticalAlign: "middle",
-                  float: "right",
-                  marginRight: "20px",
-                }}
-              />
+              <Remove className={styles.icon} />
             </div>
           </li>
         ))}
       </ul>
-      <div>
+      <div className={styles.wrapperAdd}>
         <input
+          className={styles.input}
           type="text"
+          placeholder="Add new todo"
           value={newTaskDescription}
           onChange={handleNewTaskDescriptionChange}
         />
-        <button onClick={handleAddTask}>Add</button>
+        <button className={styles.btnAdd} onClick={handleAddTask}>
+          Add
+        </button>
       </div>
     </div>
   );

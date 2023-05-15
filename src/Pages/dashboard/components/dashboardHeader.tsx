@@ -10,7 +10,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 30px;
 `;
 const Buttons = styled.div`
@@ -26,6 +26,7 @@ const Buttons = styled.div`
   }
   & > p {
     font-weight: 500;
+    font-size: 0.85em;
     margin: 10px;
   }
 `;
@@ -35,7 +36,8 @@ const DownloadBtn = styled(Buttons)`
 `;
 const AddBtn = styled(Buttons)`
   color: white;
-  background-color: var(--blue);
+  border: none;
+  background-color: var(--purple);
   & > svg {
     fill: white;
   }

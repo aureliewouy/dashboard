@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import styles from "./sideBar.module.css";
 import logo from "../medias/logo.png";
 import { ReactComponent as Dashboard } from "../medias/icons/dashboard.svg";
-import { ReactComponent as Settings } from "../medias/icons/settings.svg";
+import { ReactComponent as Settings } from "../medias/icons/setting.svg";
 import { ReactComponent as Company } from "../medias/icons/company.svg";
-import { ReactComponent as Tasks } from "../medias/icons/task.svg";
+import { ReactComponent as Deals } from "../medias/icons/deal.svg";
 import { ReactComponent as Help } from "../medias/icons/help.svg";
-import { ReactComponent as Chat } from "../medias/icons/chat.svg";
+import { ReactComponent as Chat } from "../medias/icons/msg.svg";
+import { ReactComponent as Contact } from "../medias/icons/contact.svg";
 interface SidebarProps {
   active: string;
 }
@@ -35,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ active }) => {
       </div>
       <div className={styles.sidebarItem}>
         <Link to="/tasks" className={active === "tasks" ? "active" : ""}>
-          <Tasks /> Deals
+          <Deals /> Deals
         </Link>
       </div>
       <div className={styles.sidebarItem}>
@@ -44,6 +45,11 @@ const Sidebar: React.FC<SidebarProps> = ({ active }) => {
           <div className={styles.notification}>
             <p>3</p>
           </div>
+        </Link>
+      </div>
+      <div className={styles.sidebarItem}>
+        <Link to="/setting" className={active === "setting" ? "active" : ""}>
+          <Contact /> Contact
         </Link>
       </div>
       <div className={styles.sidebarItem}>

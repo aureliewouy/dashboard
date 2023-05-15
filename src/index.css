@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--black);
 }
 
 code {
@@ -12,11 +13,12 @@ code {
     monospace;
 }
 :root {
-  --yellow: #ffbe0b;
+  --yellow: #f4d373;
   --orange: #fb5607;
-  --pink: #ff006e;
-  --purple: #8338ec;
-  --blue: #3a86ff;
-  --blueOpacity: rgba(58, 134, 255, 0.3);
+  --pink: #f9948e;
+  --purple: #775da6;
+  --blue: #83c0c9;
+  --purpleOpacity: #eeebf4;
+  --black: #242424;
   --background: #f9f9f9;
 }

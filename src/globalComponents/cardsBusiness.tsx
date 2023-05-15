@@ -37,6 +37,7 @@ const CardTitle = styled.h2`
 const CardSubtitle = styled.p`
   font-size: 16px;
   margin: 0;
+  color: grey;
 `;
 const CardFlex = styled.div`
   display: flex;
@@ -48,6 +49,15 @@ const CardPercent = styled.div`
   height: 5px;
   background-color: blue;
   border-radius: 25px;
+`;
+const CardPercentWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+const Percent = styled.p`
+  color: grey;
+  font-size: smaller;
+  margin-left: 5px;
 `;
 const Card: React.FC<CardProps> = ({
   price,
@@ -77,9 +87,12 @@ const Card: React.FC<CardProps> = ({
           </div>
           <Icon>{icon}</Icon>
         </CardFlex>
-        <CardLoadingWrapper>
-          <CardPercentProps></CardPercentProps>
-        </CardLoadingWrapper>
+        <CardPercentWrapper>
+          <CardLoadingWrapper>
+            <CardPercentProps></CardPercentProps>
+          </CardLoadingWrapper>
+          <Percent>{percent}%</Percent>
+        </CardPercentWrapper>
       </CardContent>
     </CardWrapper>
   );
