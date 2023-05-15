@@ -42,18 +42,24 @@ const SalesByProduct: React.FC<SalesByProductProps> = ({ data }) => {
         type: "pie",
         name: "Categorie",
         data: data.map((d) => ({ name: d.product, y: d.sales })),
+        borderWidth: 3,
+        borderColor: "#fff",
         showInLegend: true,
+
         dataLabels: {
           color: "white",
           distance: -50,
           enabled: true,
           format: "{point.percentage:.1f}%",
+          style: {
+            textShadow: false + " !important",
+            fontSize: "0.8em",
+          },
         },
       },
     ],
     legend: {
       labelFormatter: function (this: any) {
-        console.log(this.options.y);
         return this.options.y + " " + this.name;
       },
     },

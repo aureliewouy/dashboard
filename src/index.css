@@ -22,3 +22,6 @@ code {
   --black: #242424;
   --background: #f9f9f9;
 }
+.highcharts-text-outline {
+  stroke: none;
+}

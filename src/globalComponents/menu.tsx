@@ -17,6 +17,7 @@ const NavWrapper = styled.div`
 `;
 
 const SearchWrapper = styled.div`
+  padding: 0 4%;
   display: flex;
   align-items: center;
   padding-left: 20px;

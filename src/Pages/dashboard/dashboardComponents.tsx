@@ -1,5 +1,5 @@
 import CardBusiness from "../../globalComponents/cardsBusiness";
-import { salesByProductData, salesData } from "../../utils/fakeData/salesData";
+import { salesByProductData } from "../../utils/fakeData/salesData";
 import { formatNumber } from "../../utils/formatNumber";
 import SalesByProduct from "./charts/SalesByProductChart";
 import SalesDashboard from "./charts/SalesDashboard";
@@ -11,6 +11,7 @@ import { ReactComponent as Wallet } from "../../medias/icons/wallet.svg";
 import CardBase from "../../globalComponents/cardBase";
 import TaskList from "./components/tasks";
 import ProjectTable from "./components/projectsTable";
+import StackedHistogramChart from "./charts/stackedHistogram";
 
 const DashboardComponent = (): JSX.Element => {
   return (
@@ -59,8 +60,8 @@ const DashboardComponent = (): JSX.Element => {
           style={{
             display: "flex",
             justifyContent: "space-between",
+            flexWrap: "nowrap",
             marginTop: "1%",
-            flexWrap: "wrap",
             gap: " 10px",
           }}
         >
@@ -70,9 +71,14 @@ const DashboardComponent = (): JSX.Element => {
             widget={<SalesByProduct data={salesByProductData.data} />}
           />
           <CardBase
+            title="Top 3 projects revenues"
+            grow={0.5}
+            widget={<StackedHistogramChart />}
+          />
+          <CardBase
             title="Income Amounts"
             grow={2}
-            widget={<SalesDashboard salesData={salesData.salesData} />}
+            widget={<SalesDashboard />}
           />
         </div>
         <div

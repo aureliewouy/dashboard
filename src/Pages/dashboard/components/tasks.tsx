@@ -69,7 +69,11 @@ const TaskList = () => {
       </p>
       <ul style={{ padding: 0 }}>
         {tasks.map((task) => (
-          <li className={styles.list} key={task.id}>
+          <li
+            className={styles.list}
+            key={task.id}
+            onClick={() => handleTaskDoneChange(task.id)}
+          >
             <input
               className={styles.checkbox}
               type="checkbox"

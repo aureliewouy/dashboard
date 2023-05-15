@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ active }) => {
     <div className={styles.sidebar}>
       <div className={styles.logo}>
         <img src={logo} alt="Logo" style={{ width: "50px" }} />
-        <p style={{ fontWeight: "bold", marginLeft: "10px" }}>Management</p>
+        <p style={{ fontWeight: "bold", marginLeft: "10px" }}>Kryva</p>
       </div>
       <div className={styles.sidebarItem}>
         <Link to="/" className={active === "dashboard" ? styles.active : ""}>

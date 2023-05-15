@@ -10,9 +10,11 @@ const GlobalLayout = ({ children }: LayoutProps) => {
   return (
     <div>
       {/* <GlobalProvider>*/}
-      <NavBar />
       <Sidebar active="dashboard" />
-      <main style={{ width: "85%", marginLeft: "auto" }}>{children}</main>
+      <main style={{ width: "85%", marginLeft: "auto" }}>
+        <NavBar />
+        {children}
+      </main>
     </div>
   );
 };

@@ -47,3 +47,37 @@ function formatNumber(
   return formatNumb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 export { formatNumberToLocaleStandard, formatNumber };
+
+function getMonthName(monthNumber: number): string {
+  const monthNames = [
+    "janv.",
+    "fév.",
+    "mars",
+    "avril",
+    "mai",
+    "juin",
+    "juil.",
+    "août",
+    "sept.",
+    "oct.",
+    "nov.",
+    "déc.",
+  ];
+
+  return monthNames[monthNumber - 1];
+}
+
+export function getDateInYear(dayOfYear: number) {
+  const date = new Date();
+  date.setMonth(0); // Set the month to January
+  date.setDate(dayOfYear); // Set the day of the month
+
+  // Obtenez la date au format souhaité (par exemple, "YYYY-MM-DD")
+  const year = date.getFullYear();
+  const monthNumber = date.getMonth() + 1;
+  const monthName = getMonthName(monthNumber);
+  const day = date.getDate().toString().padStart(2, "0");
+  const formattedDate = `${day} ${monthName} ${year}`;
+
+  return formattedDate;
+}

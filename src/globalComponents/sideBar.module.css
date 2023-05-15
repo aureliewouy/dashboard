@@ -32,6 +32,7 @@
 .sidebarItem a svg {
   width: 15px;
   margin-right: 10px;
+  fill: darkgrey;
 }
 .sidebarItem:hover a svg {
   width: 20px;
@@ -44,9 +45,10 @@
 
 .active {
   background-color: var(--purpleOpacity);
+  color: var(--purple);
 }
 .activeIcon {
-  fill: var(--blue);
+  fill: var(--purple) !important;
 }
 .notification {
   display: flex;

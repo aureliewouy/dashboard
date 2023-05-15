@@ -31,7 +31,7 @@ const StyledTableCell = styled.td`
 
 const BodyTableRow = styled.tr`
   &:nth-child(odd) {
-    background: var(--background);
+    background: var(--purpleOpacity);
   }
 `;
 const tableData: TableData[] = [
