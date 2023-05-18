@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { ReactComponent as Remove } from "../../../medias/icons/remove.svg";
+import { ReactComponent as Remove } from "../../../medias/icons/trash.svg";
+import { ReactComponent as Close } from "../../../medias/icons/close.svg";
 import styles from "./tasks.module.css";
+import trash from "../../../medias/icons/delete.png";
 interface Task {
   id: number;
   description: string;
@@ -21,17 +23,19 @@ const TaskList = () => {
     },
     {
       id: Math.random(),
-      description: "Create new version",
+      description: "Create V2",
       done: false,
     },
     {
       id: Math.random(),
-      description: "Start the Campaign",
+      description: "Start a new campaign",
       done: false,
     },
   ]);
   const [newTaskDescription, setNewTaskDescription] = useState("");
+  const [taskToDelete, setTaskToDelete] = useState<Task>(tasks[0]);
 
+  const [isOpen, setIsOpen] = useState(false);
   const handleNewTaskDescriptionChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -62,6 +66,14 @@ const TaskList = () => {
     setTasks(newTasks);
   };
 
+  const handleIconClick = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
       <p className={styles.counter}>
@@ -69,23 +81,25 @@ const TaskList = () => {
       </p>
       <ul style={{ padding: 0 }}>
         {tasks.map((task) => (
-          <li
-            className={styles.list}
-            key={task.id}
-            onClick={() => handleTaskDoneChange(task.id)}
-          >
+          <li className={styles.list} key={task.id}>
             <input
               className={styles.checkbox}
               type="checkbox"
               checked={task.done}
               onChange={() => handleTaskDoneChange(task.id)}
             />
-            <span className={task.done ? styles.done : ""}>
+            <span
+              className={task.done ? styles.done : ""}
+              onClick={() => handleTaskDoneChange(task.id)}
+            >
               {task.description}
             </span>
             <div
-              style={{ display: "inline", cursor: "pointer" }}
-              onClick={() => handleDeleteTask(task.id)}
+              className={styles.trashWrapper}
+              onClick={() => {
+                setTaskToDelete(task);
+                handleIconClick();
+              }}
             >
               <Remove className={styles.icon} />
             </div>
@@ -104,6 +118,43 @@ const TaskList = () => {
           Add
         </button>
       </div>
+      {isOpen && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <span className={styles.close} onClick={handleClose}>
+              <Close />
+            </span>
+            <img src={trash} alt="trash" style={{ width: "50px" }} />
+            <h2
+              style={{
+                marginTop: "7%",
+                marginLeft: "10%",
+                textAlign: "center",
+              }}
+            >
+              Are you sure ?
+            </h2>
+            <p className={styles.description}>
+              Do you really want to delete this task ?
+              <span> {taskToDelete.description}</span>
+            </p>
+            <div className={styles.btnWrapper}>
+              <div
+                className={styles.btnYes}
+                onClick={() => {
+                  handleDeleteTask(taskToDelete.id);
+                  handleClose();
+                }}
+              >
+                <p>Yes</p>
+              </div>
+              <div className={styles.btnNon}>
+                <p>No</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

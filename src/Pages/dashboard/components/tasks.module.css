@@ -1,7 +1,7 @@
 input[type="checkbox"] {
-  background-color: green; /* Changer la couleur de fond */
-  border-radius: 5px; /* Ajouter des coins arrondis */
-  padding: 10px; /* Ajouter un peu d'espace entre le bord et le contenu */
+  background-color: green;
+  border-radius: 5px;
+  padding: 10px;
 }
 .checkbox {
   transform: scale(1.3);
@@ -13,7 +13,18 @@ input[type="checkbox"] {
   height: 20px;
   vertical-align: middle;
   float: right;
-  margin-right: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  fill: var(--purple);
+}
+
+.trashWrapper {
+  display: inline;
+  cursor: pointer;
+}
+.icon:hover {
+  background-color: var(--purpleOpacity);
+  border-radius: 100%;
 }
 .done {
   color: var(--purple);
@@ -49,4 +60,74 @@ input[type="checkbox"] {
 .list {
   list-style-type: none;
   line-height: 2.5;
+  cursor: pointer;
+}
+.btnYes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 20px;
+  background-color: var(--purple);
+  border-radius: 5px;
+  padding: 12px;
+  font-weight: bold;
+  margin: 10px;
+}
+.btnNon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 19px;
+  border: 1px solid var(--purple);
+  border-radius: 5px;
+  padding: 12px;
+  font-weight: bold;
+  color: var(--purple);
+  margin: 10px;
+}
+.btnYes p {
+  color: white;
+}
+.popup {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Opacité noire */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popupContent {
+  background-color: white;
+  border-radius: 10px;
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.close svg {
+  width: 15px;
+  height: 15px;
+}
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+}
+.description {
+  margin-top: 0%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.description span {
+  color: grey;
+  font-style: italic;
 }
