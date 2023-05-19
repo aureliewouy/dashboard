@@ -45,8 +45,11 @@ const AddBtn = styled(Buttons)`
 const DoubleBtn = styled.div`
   display: flex;
 `;
+interface ClickProps {
+  handlePrint: any;
+}
 
-const DashboardHeader = (): JSX.Element => {
+const DashboardHeader: React.FC<ClickProps> = ({ handlePrint }) => {
   return (
     <div>
       <HeaderWrapper>
@@ -55,7 +58,7 @@ const DashboardHeader = (): JSX.Element => {
           <Welcome>Welcome back to CRM platform</Welcome>
         </div>
         <DoubleBtn>
-          <DownloadBtn>
+          <DownloadBtn onClick={handlePrint}>
             <Download />
             <p>Download</p>
           </DownloadBtn>

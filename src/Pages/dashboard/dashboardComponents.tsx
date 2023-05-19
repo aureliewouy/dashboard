@@ -12,13 +12,26 @@ import CardBase from "../../globalComponents/cardBase";
 import TaskList from "./components/tasks";
 import ProjectTable from "./components/projectsTable";
 import StackedHistogramChart from "./charts/stackedHistogram";
+import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import { DashboardToPrint } from "./dashboardToPrint";
 
 const DashboardComponent = (): JSX.Element => {
+  const componentRef = useRef(null);
+  const printPage = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "test",
+    removeAfterPrint: true,
+  });
+  const handlePrint = () => {
+    printPage();
+  };
+
   return (
     <div style={{ backgroundColor: "var(--background)" }}>
       <div style={{ padding: "2% 4%" }}>
-        <DashboardHeader />
-
+        <DashboardHeader handlePrint={handlePrint} />
+        <button onClick={handlePrint}>test</button>
         <div
           style={{
             display: "flex",
@@ -93,6 +106,9 @@ const DashboardComponent = (): JSX.Element => {
           <CardBase grow={2} title="Top projects" widget={<ProjectTable />} />
           <CardBase grow={0} title="Tasks" widget={<TaskList />} />
         </div>
+      </div>
+      <div style={{ display: "none" }}>
+        <DashboardToPrint ref={componentRef} />
       </div>
     </div>
   );

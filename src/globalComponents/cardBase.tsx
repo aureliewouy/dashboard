@@ -9,7 +9,7 @@ interface CardProps {
 
 const CardWrapper = styled.div`
   flex-grow: 1;
-  height: 450px;
+  height: 470px;
   background-color: white;
   border-radius: 10px;
   overflow: auto;
