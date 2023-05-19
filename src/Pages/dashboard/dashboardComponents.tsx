@@ -91,7 +91,7 @@ const DashboardComponent = (): JSX.Element => {
           }}
         >
           <CardBase grow={2} title="Top projects" widget={<ProjectTable />} />
-          <CardBase title="Tasks" widget={<TaskList />} />
+          <CardBase grow={0} title="Tasks" widget={<TaskList />} />
         </div>
       </div>
     </div>

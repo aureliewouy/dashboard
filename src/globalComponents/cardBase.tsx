@@ -12,7 +12,7 @@ const CardWrapper = styled.div`
   height: 450px;
   background-color: white;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
 

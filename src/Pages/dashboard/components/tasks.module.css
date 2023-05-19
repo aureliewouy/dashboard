@@ -12,10 +12,10 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  float: right;
   padding: 10px;
-  margin-right: 10px;
   fill: var(--purple);
+  margin-top: -10px;
+  margin-bottom: 5px;
 }
 
 .trashWrapper {
@@ -42,9 +42,9 @@ input[type="checkbox"] {
   border-radius: 5px;
   padding: 12px;
   font-weight: bold;
-  position: absolute;
   right: 0;
   top: -1px;
+  cursor: pointer;
 }
 .input {
   padding: 10px;
@@ -53,39 +53,49 @@ input[type="checkbox"] {
   border: 1px solid lightgray;
   flex-grow: 1;
 }
+.inputError,
+.inputError:focus {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--pink);
+  flex-grow: 1;
+  outline: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.input:focus {
+  border-color: var(--purple);
+  outline: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 .wrapperAdd {
   display: flex;
-  position: relative;
+}
+.listWrapper {
+  padding: 0;
 }
 .list {
   list-style-type: none;
   line-height: 2.5;
   cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  width: fit-content;
+}
+.list span {
+  width: 320px;
+  line-height: normal;
 }
 .btnYes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 30px;
   height: 20px;
   background-color: var(--purple);
-  border-radius: 5px;
-  padding: 12px;
-  font-weight: bold;
-  margin: 10px;
 }
 .btnNon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 29px;
   height: 19px;
   border: 1px solid var(--purple);
-  border-radius: 5px;
-  padding: 12px;
-  font-weight: bold;
   color: var(--purple);
-  margin: 10px;
 }
 .btnYes p {
   color: white;
@@ -108,19 +118,30 @@ input[type="checkbox"] {
   width: 500px;
   height: 300px;
   position: relative;
+  overflow: auto;
 }
 .close {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
 }
 .close svg {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
 }
 .btnWrapper {
   display: flex;
   justify-content: center;
+}
+.btnWrapper div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 12px;
+  font-weight: bold;
+  margin: 10px;
 }
 .description {
   margin-top: 0%;
@@ -130,4 +151,38 @@ input[type="checkbox"] {
 .description span {
   color: grey;
   font-style: italic;
+}
+.sure {
+  margin-top: 4%;
+  text-align: center;
+}
+.navigationWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.navigationWrapper button {
+  padding: 10px;
+  background-color: var(--pink);
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.navigationWrapper button svg {
+  width: 15px;
+  height: 13px;
+  fill: white;
+}
+.navigationWrapper button:disabled,
+.navigationWrapper button[disabled] {
+  background-color: #cccccc;
+  cursor: no-drop;
+}
+.errorMsg {
+  color: var(--pink);
+  line-height: 0.2;
+  font-size: 11px;
 }

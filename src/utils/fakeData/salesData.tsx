@@ -1,4 +1,5 @@
 import { SalesByProductProps } from "../../Pages/dashboard/charts/SalesByProductChart";
+import { Task } from "../../Pages/dashboard/components/tasks";
 
 export const salesByProductData: SalesByProductProps = {
   data: [
@@ -27,3 +28,25 @@ export const generateRandomData = (year: number): number[] => {
 
   return data;
 };
+export const TasksData: Task[] = [
+  {
+    id: Math.random(),
+    description: "Send email to Robert",
+    done: false,
+  },
+  {
+    id: Math.random(),
+    description: "User Testing",
+    done: true,
+  },
+  {
+    id: Math.random(),
+    description: "Create V2",
+    done: false,
+  },
+  {
+    id: Math.random(),
+    description: "Start a new campaign",
+    done: false,
+  },
+];
