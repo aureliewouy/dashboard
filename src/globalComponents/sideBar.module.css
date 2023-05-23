@@ -71,3 +71,18 @@
   padding-bottom: 20px;
   display: flex;
 }
+.logo img {
+  animation: rotate 1.5s infinite linear paused;
+  rotate: 0deg;
+  transition: rotate 3sec cubic-bezier(0.5, 1, 1, 1);
+}
+.logo:hover img {
+  animation-play-state: running;
+  rotate: -720deg;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

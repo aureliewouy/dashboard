@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { formatNumber } from "../../../utils/formatNumber";
+import { TableData } from "../../../utils/fakeData/salesData";
 
-interface TableData {
-  no: number;
+export interface tableData {
   category: string;
   name: string;
   revenues: number;
@@ -34,50 +34,9 @@ const BodyTableRow = styled.tr`
     background: var(--purpleOpacity);
   }
 `;
-const tableData: TableData[] = [
-  {
-    no: 1,
-    name: "Lumina",
-    category: "Website Redesign",
-    revenues: 1000,
-    leads: 20,
-    deals: 5,
-  },
-  {
-    no: 2,
-    name: "BlueWave",
-    category: "Marketing Plan",
-    revenues: 2000,
-    leads: 30,
-    deals: 10,
-  },
-  {
-    no: 3,
-    name: "Synapse",
-    category: "Mobile App ",
-    revenues: 3000,
-    leads: 40,
-    deals: 15,
-  },
-  {
-    no: 4,
-    name: "SwiftShift",
-    category: "E-commerce",
-    revenues: 4000,
-    leads: 50,
-    deals: 20,
-  },
-  {
-    no: 5,
-    name: "NexusTech",
-    category: "Mobile App",
-    revenues: 56400,
-    leads: 30,
-    deals: 10,
-  },
-];
 
 const ProjectTable: React.FC = () => {
+  const sortedTable = [...TableData].sort((a, b) => b.revenues - a.revenues);
   return (
     <div>
       <p style={{ marginTop: "-5px", color: "darkgrey", marginLeft: "3px" }}>
@@ -96,9 +55,9 @@ const ProjectTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((data) => (
-            <BodyTableRow key={data.no}>
-              <StyledTableCell>{data.no}</StyledTableCell>
+          {sortedTable.map((data, index) => (
+            <BodyTableRow key={index}>
+              <StyledTableCell>{index + 1}.</StyledTableCell>
               <StyledTableCell>{data.name}</StyledTableCell>
               <StyledTableCell>{data.category}</StyledTableCell>
               <StyledTableCell>

@@ -5,6 +5,7 @@ interface CardProps {
   title: string;
   widget: JSX.Element;
   grow?: number;
+  overflow?: string;
 }
 
 const CardWrapper = styled.div`
@@ -12,7 +13,7 @@ const CardWrapper = styled.div`
   height: 470px;
   background-color: white;
   border-radius: 10px;
-  overflow: auto;
+  overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
 
@@ -30,9 +31,10 @@ const CardFlex = styled.div`
   justify-content: space-between;
 `;
 
-const CardBase: React.FC<CardProps> = ({ title, widget, grow }) => {
+const CardBase: React.FC<CardProps> = ({ title, widget, grow, overflow }) => {
   const CardWrapperSized = styled(CardWrapper)`
     flex-grow: ${(props) => grow};
+    overflow: ${(props) => overflow && overflow};
   `;
   return (
     <CardWrapperSized>

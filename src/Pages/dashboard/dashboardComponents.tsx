@@ -31,7 +31,6 @@ const DashboardComponent = (): JSX.Element => {
     <div style={{ backgroundColor: "var(--background)" }}>
       <div style={{ padding: "2% 4%" }}>
         <DashboardHeader handlePrint={handlePrint} />
-        <button onClick={handlePrint}>test</button>
         <div
           style={{
             display: "flex",
@@ -104,7 +103,12 @@ const DashboardComponent = (): JSX.Element => {
           }}
         >
           <CardBase grow={2} title="Top projects" widget={<ProjectTable />} />
-          <CardBase grow={0} title="Tasks" widget={<TaskList />} />
+          <CardBase
+            overflow="auto"
+            grow={0}
+            title="Tasks"
+            widget={<TaskList />}
+          />
         </div>
       </div>
       <div style={{ display: "none" }}>

@@ -1,4 +1,5 @@
 import { SalesByProductProps } from "../../Pages/dashboard/charts/SalesByProductChart";
+import { tableData } from "../../Pages/dashboard/components/projectsTable";
 import { Task } from "../../Pages/dashboard/components/tasks";
 
 export const salesByProductData: SalesByProductProps = {
@@ -28,25 +29,70 @@ export const generateRandomData = (year: number): number[] => {
 
   return data;
 };
+export const TableData: tableData[] = [
+  {
+    name: "Lumina",
+    category: "Website Redesign",
+    revenues: 1000,
+    leads: 20,
+    deals: 5,
+  },
+  {
+    name: "BlueWave",
+    category: "Marketing Plan",
+    revenues: 2000,
+    leads: 30,
+    deals: 10,
+  },
+  {
+    name: "Synapse",
+    category: "Mobile App ",
+    revenues: 3000,
+    leads: 40,
+    deals: 15,
+  },
+  {
+    name: "SwiftShift",
+    category: "E-commerce",
+    revenues: 4000,
+    leads: 50,
+    deals: 20,
+  },
+  {
+    name: "NexusTech",
+    category: "Mobile App",
+    revenues: 56400,
+    leads: 30,
+    deals: 10,
+  },
+];
+
 export const TasksData: Task[] = [
   {
     id: Math.random(),
-    description: "Send email to Robert",
+    description: "Implement a mobile app version of the CRM platform",
     done: false,
   },
   {
     id: Math.random(),
-    description: "User Testing",
+    description:
+      "Implement a task management feature with reminders and notifications.",
     done: true,
   },
   {
     id: Math.random(),
-    description: "Create V2",
+    description: "Implement user authentication and authorization system.",
     done: false,
   },
   {
     id: Math.random(),
-    description: "Start a new campaign",
+    description:
+      "Improve the user interface and user experience of the CRM platform",
+    done: false,
+  },
+  {
+    id: Math.random(),
+    description: "Design and develop a customizable dashboard for users.",
     done: false,
   },
 ];

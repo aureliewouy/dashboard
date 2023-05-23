@@ -72,7 +72,9 @@ const TaskList = () => {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
-
+  if (visibleItems.length === 0) {
+    handlePrev();
+  }
   const handleIconClick = () => {
     setIsOpen(true);
   };
@@ -94,6 +96,7 @@ const TaskList = () => {
         {tasks.filter((task) => task.done).length} of {tasks.length} done
       </p>
       <ul className={styles.listWrapper}>
+        {visibleItems.length < 1 ?? handlePrev()}
         {visibleItems.map((task) => (
           <li className={styles.list} key={task.id}>
             <input
@@ -126,7 +129,7 @@ const TaskList = () => {
             </button>
             <button
               onClick={handleNext}
-              disabled={startIndex > tasks.length - itemsPerPage}
+              disabled={startIndex > tasks.length - itemsPerPage - 1}
             >
               <Right />
             </button>
